@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donate - The Giver Foundation</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a class="nav-logo" href="index.html">
+                <img src="Image/Logo.jpeg" alt="The Giver Foundation Logo">
+                <span>The Giver Foundation</span>
+            </a>
+            <button class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="how-it-works.html">How It Works</a></li>
+                <li><a href="report.html">Report</a></li>
+                <li><a href="donate.html" class="active">Donate</a></li>
+                <li><a href="testimonials.html">Testimonials</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="login.html" class="btn-login">Login</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="page-header">
+        <div class="container">
+            <h1>Make a Donation</h1>
+            <p>Your generosity changes lives</p>
+        </div>
+    </section>
+
+    <section class="donate-section">
+        <div class="container">
+            <div class="donate-content">
+                <div class="donate-info">
+                    <h2>Your Impact</h2>
+                    <div class="impact-items">
+                        <div class="impact-item">
+                            <i class="fas fa-utensils"></i>
+                            <div>
+                                <h4>J$3,750</h4>
+                                <p>Provides meals for a family of 4</p>
+                            </div>
+                        </div>
+                        <div class="impact-item">
+                            <i class="fas fa-book"></i>
+                            <div>
+                                <h4>J$7,500</h4>
+                                <p>School supplies for 5 children</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="donate-form-container">
+                    <form id="donateForm" class="donate-form">
+                        <div class="form-group">
+                            <label>Donation Type</label>
+                            <div class="donation-type">
+                                <label class="radio-option">
+                                    <input type="radio" name="donationType" value="one-time" checked>
+                                    <span>One-Time</span>
+                                </label>
+                                <label class="radio-option">
+                                    <input type="radio" name="donationType" value="monthly">
+                                    <span>Monthly</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Select Amount</label>
+                            <div class="amount-grid">
+                                <button type="button" class="amount-btn" data-amount="3750">J$3,750</button>
+                                <button type="button" class="amount-btn" data-amount="7500">J$7,500</button>
+                                <button type="button" class="amount-btn" data-amount="15000">J$15,000</button>
+                                <button type="button" class="amount-btn" data-amount="37500">J$37,500</button>
+                                <button type="button" class="amount-btn" data-amount="75000">J$75,000</button>
+                                <button type="button" class="amount-btn" data-amount="custom">Custom</button>
+                            </div>
+                        </div>
+
+                        <div class="form-group" id="customAmountGroup" style="display: none;">
+                            <label for="customAmount">Custom Amount (JMD)</label>
+                            <div class="input-with-icon">
+                                <span style="font-weight: bold;">J$</span>
+                                <input type="number" id="customAmount" name="customAmount" min="1" placeholder="Enter amount">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="donorName">Full Name <span class="required">*</span></label>
+                            <input type="text" id="donorName" name="donorName" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="donorEmail">Email Address <span class="required">*</span></label>
+                            <input type="email" id="donorEmail" name="donorEmail" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="paymentMethod">Payment Method <span class="required">*</span></label>
+                            <select id="paymentMethod" name="paymentMethod" required>
+                                <option value="">Select payment method</option>
+                                <option value="bank">Bank Transfer</option>
+                                <option value="cash">Cash in Hand</option>
+                            </select>
+                        </div>
+
+                        <div id="paymentInstructions" class="payment-instructions" style="display: none;">
+                            <div id="bankInstructions" class="instruction-card" style="display: none;">
+                                <h4><i class="fas fa-university"></i> Bank Transfer Instructions</h4>
+                                <p>Please transfer your donation to:</p>
+                                <p><strong>Account Name:</strong> The Giver Foundation</p>
+                                <p><strong>Bank:</strong> Your Bank Name</p>
+                                <p><strong>Account Number:</strong> 000000000</p>
+                                <p><strong>Branch:</strong> Main Branch</p>
+                                <p><strong>SWIFT Code:</strong> ABCDJKL</p>
+                                <p><em>After sending, click submit and email us your transfer receipt.</em></p>
+                            </div>
+                            <div id="cashInstructions" class="instruction-card" style="display: none;">
+                                <h4><i class="fas fa-hand-holding-usd"></i> Cash In Hand Instructions</h4>
+                                <p>We can arrange a cash pickup/drop-off.</p>
+                                <p>Please submit the form and we will contact you to schedule collection.</p>
+                            </div>
+                        </div>
+
+                        <div class="form-group checkbox-group">
+                            <label>
+                                <input type="checkbox" name="anonymous">
+                                <span>Make my donation anonymous</span>
+                            </label>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-full">
+                            <i class="fas fa-heart"></i> Complete Donation
+                        </button>
+
+                        <div id="formMessage" class="form-message"></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>About Us</h3>
+                    <p>The Giver Foundation is dedicated to empowering communities through compassion, support, and sustainable solutions.</p>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="how-it-works.html">How It Works</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="terms.html">Terms & Conditions</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Get Involved</h3>
+                    <ul>
+                        <li><a href="report.html">Report an Issue</a></li>
+                        <li><a href="donate.html">Donate</a></li>
+                        <li><a href="testimonials.html">Testimonials</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Connect With Us</h3>
+                    <div class="social-links">
+                        <a href="https://instagram.com" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://wa.me/18768926817" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                        <a href="mailto:giverfoundation2025@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 The Giver Foundation. All rights reserved.</p>
+                <p class="made-by">
+                    <i class="fas fa-laptop-code"></i>
+                    Made by <a href="#" target="_blank">MintoWebDesign</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/donate.js"></script>
+</body>
+</html>
